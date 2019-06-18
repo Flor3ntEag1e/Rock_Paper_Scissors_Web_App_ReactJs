@@ -1,0 +1,18 @@
+.PlayerComputerCanvas {
+    text-align: center;
+    text-align: -webkit-center;
+
+}
+
+.Score {
+    border: 1px solid black;
+    width: 20em;
+}
+
+.wins {
+    float: left;
+}
+
+.losses {
+    float: right;
+}
