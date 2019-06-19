@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TabScore = ({win, draw, lose}) => {
+const TabScore = ({win, draw, lose, result}) => {
 
     return (
 
@@ -9,6 +9,7 @@ const TabScore = ({win, draw, lose}) => {
             <div className='win'>wins: {win}</div>
             <div className='draw'>draws: {draw}</div>
             <div className='lose'>losses: {lose}</div>
+            <div className='result'><b>The winner is: {result}</b></div>
         </div>
     )
 }
