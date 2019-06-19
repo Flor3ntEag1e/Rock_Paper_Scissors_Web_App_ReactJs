@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-import PVC from './components/PlayerVsComputer'
 
-function App() {
-  return (
-    <div className="App">
-     <h1>Rock Paper Scissors</h1>
-     <PVC/>
-    </div>
-  );
+import Game from './game/Game'
+
+
+class App extends React.Component {
+
+  render() {
+		return (
+			<Game />
+		);
+	}
 }
 
 export default App;
