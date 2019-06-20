@@ -1,0 +1,19 @@
+.Modes {
+    position: absolute; 
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+a {
+    color: white;
+}
+
+.Modes button {
+    width: 100%
+}

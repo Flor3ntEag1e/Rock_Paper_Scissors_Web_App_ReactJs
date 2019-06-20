@@ -1,10 +1,12 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import "./Game.css";
 
 //import component
 import TabScore from "./../components/TabScore";
 import Action from "./actions/Actions";
 import Area from "./area/Area";
+import Modes from './modes/Modes'
 
 //import image
 import rock from "./../assets/rock.jpg";

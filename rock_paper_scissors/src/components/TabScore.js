@@ -1,7 +1,6 @@
 import React from 'react'
 import './TabScore.css'
 const TabScore = ({win, draw, lose, result}) => {
-
     return (
 
         <div className='TabScore'>
