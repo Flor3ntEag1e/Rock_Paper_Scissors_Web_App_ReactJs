@@ -1,0 +1,10 @@
+.TabScore {
+    border: 2px solid white;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.TabScore h2 {
+    color: crimson;
+}
+
