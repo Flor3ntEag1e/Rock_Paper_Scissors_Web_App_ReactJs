@@ -40,7 +40,6 @@ class SheldonGame extends React.Component {
     initialScore.result = "";
     initialScore.actionPlayer = "";
     initialScore.actionComputer1 = "";
-    initialScore.actionComputer2 = "";
     this.setState({ initialScore });
   };
 

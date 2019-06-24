@@ -22,6 +22,16 @@
     margin-top: -15px;
 }
 
+.ComputerOne {
+    margin: 10px;
+    float: left;
+    border: 2px solid slategray;
+    width: 125px;
+    height: 130px;
+    margin-top: -15px;
+}
+
+
 .fieldPlayer {
     color: darkorange
 }

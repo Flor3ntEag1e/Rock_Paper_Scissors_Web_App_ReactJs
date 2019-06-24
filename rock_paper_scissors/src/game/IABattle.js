@@ -2,25 +2,26 @@ import React from "react";
 import "./Game.css";
 
 //import component
-import TabScore from "./../components/TabScore";
+import TabScoreIA from "./../components/TabScoreIA";
 import Area from "./area/Area";
-
-//import image
-import rock from "./../assets/rock.jpg";
-import paper from "./../assets/paper.jpg";
-import scissors from "./../assets/scissors.jpg";
+import AreaIA from "./area/AreaIA";
 
 const initialScore = {
-  wins: 0,
+  c1: 0,
   draws: 0,
-  losses: 0,
+  c2: 0,
   result: "",
-  actionPlayer: "",
   actionComputer1: "",
   actionComputer2: ""
 };
 
-export function getRandomChoice() {
+export function getRandomChoice1() {
+  const choices = ["rock", "paper", "scissors"];
+
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+export function getRandomChoice2() {
   const choices = ["rock", "paper", "scissors"];
 
   return choices[Math.floor(Math.random() * choices.length)];
@@ -30,76 +31,37 @@ class IABattle extends React.Component {
   state = initialScore;
 
   handleClickReset = () => {
-    initialScore.losses = 0;
-    initialScore.wins = 0;
+    initialScore.c2 = 0;
+    initialScore.c1 = 0;
     initialScore.draws = 0;
     initialScore.result = "";
-    initialScore.actionPlayer = "";
     initialScore.actionComputer1 = "";
     initialScore.actionComputer2 = "";
-    this.setState({ initialScore });
   };
 
-  handleClickRock = () => {
-    initialScore.actionPlayer = "rock";
-    const computerPlay = getRandomChoice();
-    initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
-    if (initialScore.actionPlayer === computerPlay) {
-      initialScore.draws += 1;
-      initialScore.result = "Nobody. Try again";
+  handleClickRandom = () => {
+    const computerOnePlay = getRandomChoice1();
+    const computerTwoPlay = getRandomChoice2();
+    initialScore.actionComputer1 = computerOnePlay;
+    initialScore.actionComputer2 = computerTwoPlay;
+    console.log(computerOnePlay);
+    console.log(computerTwoPlay);
+    if (computerOnePlay === "paper" && computerTwoPlay === "rock" ||
+    computerOnePlay === "scissors" && computerTwoPlay === "paper" ||
+    computerOnePlay === "rock" && computerTwoPlay === "scissors") {
+      initialScore.c1 += 1;
+      initialScore.result = "Computer 1 win !";
       this.setState({ initialScore });
-    } else if (computerPlay === "paper") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky";
-      this.setState({ initialScore });
-    } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-    }
-  };
-
-  handleClickPaper = () => {
-    initialScore.actionPlayer = "paper";
-    const computerPlay = getRandomChoice();
-    initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
-    if (initialScore.actionPlayer === computerPlay) {
-      initialScore.draws += 1;
-      initialScore.result = "Nobody. Try again";
-      this.setState({ initialScore });
-    } else if (computerPlay === "scissors") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
+    } else if (computerOnePlay === "paper" && computerTwoPlay === "scissors" ||
+              computerOnePlay === "scissors" && computerTwoPlay === "rock" ||
+              computerOnePlay === "rock" && computerTwoPlay === "paper") {
+      initialScore.c2 += 1;
+      initialScore.result = "Computer 2 win !";
       this.setState({ initialScore });
     } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-    }
-  };
-
-  handleClickScissors = () => {
-    initialScore.actionPlayer = "scissors";
-    const computerPlay = getRandomChoice();
-    initialScore.actionComputer1 = computerPlay;
-
-    if (initialScore.actionPlayer === computerPlay) {
       initialScore.draws += 1;
-      initialScore.result = "Nobody. Try again";
+      initialScore.result = "Draw !!";
       this.setState({ initialScore });
-      console.log(initialScore);
-    } else if (computerPlay === "rock") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
-      this.setState({ initialScore });
-      console.log(initialScore);
-    } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-      console.log(initialScore);
     }
   };
 
@@ -109,10 +71,10 @@ class IABattle extends React.Component {
         <h1>Rock Paper Scissors (IA)</h1>
 
         <div className="score">
-          <TabScore
-            win={initialScore.wins}
+          <TabScoreIA
+            c1={initialScore.c1}
             draw={initialScore.draws}
-            lose={initialScore.losses}
+            c2={initialScore.c2}
             result={initialScore.result}
           />
         </div>
@@ -121,14 +83,16 @@ class IABattle extends React.Component {
         <br />
 
         <div className="battlefield">
-          <Area
-            playerOne={initialScore.actionPlayer}
-            playerTwo={initialScore.actionComputer1}
+          <AreaIA
+            computerOne={initialScore.actionComputer1}
+            computerTwo={initialScore.actionComputer2}
           />
         </div>
 
         <br />
        
+       <button onClick={this.handleClickRandom}>Start the battle</button>
+
       </div>
     );
   }

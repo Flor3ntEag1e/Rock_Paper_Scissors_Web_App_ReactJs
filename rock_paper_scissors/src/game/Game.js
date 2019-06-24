@@ -11,8 +11,6 @@ import Modes from './modes/Modes'
 import rock from "./../assets/rock.jpg";
 import paper from "./../assets/paper.jpg";
 import scissors from "./../assets/scissors.jpg";
-import lizard from "./../assets/lizard.jpg";
-import spock from "./../assets/spock.jpg";
 
 const initialScore = {
   wins: 0,
@@ -20,8 +18,7 @@ const initialScore = {
   losses: 0,
   result: "",
   actionPlayer: "",
-  actionComputer1: "",
-  actionComputer2: ""
+  actionComputer1: ""
 };
 
 export function getRandomChoice() {
@@ -127,7 +124,7 @@ class Game extends React.Component {
         <div className="battlefield">
           <Area
             playerOne={initialScore.actionPlayer}
-            playerTwo={initialScore.actionComputer1}
+            computerOne={initialScore.actionComputer1}
           />
         </div>
 
