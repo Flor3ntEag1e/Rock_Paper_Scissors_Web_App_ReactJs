@@ -5,7 +5,9 @@ import Game from './game/Game'
 import Modes from './game/modes/Modes'
 
 const initialGame = {
-    typeGame: 0
+    typeGame: 0,
+    typeIA: 1,
+    typeSheldon: 2
 };
 
 
@@ -48,7 +50,10 @@ class App extends React.Component {
             </div>
 			<div className='GamePlay'>
 				<Modes
-				mode={initialGame.typeGame} />
+                mode={initialGame.typeGame}
+                iabattle={initialGame.typeIA}
+                sheldongame={initialGame.typeSheldon}
+                />
 			</div>
 			</div>
 		);

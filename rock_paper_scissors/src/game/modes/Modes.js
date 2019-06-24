@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import './Modes.css'
 import IABattle from '../IABattle';
@@ -8,18 +7,18 @@ import SheldonGame from '../SheldonGame'
 
 
 
-const Modes = (mode) => {
-    const modegame = mode
-    console.log(modegame);
+const Modes = ({mode, iabattle, sheldongame}) => {
+    console.log({mode});
+    //console.log({iabattle});
     
 
-    if ({mode} === 'iabattle') {
+    if (mode === iabattle) {
         return (
             <div>
                 <IABattle />
             </div>
         );
-    } else if ({mode} === 'sheldongame') {
+    } else if (mode === sheldongame) {
         return (
             <div>
                 <SheldonGame />
