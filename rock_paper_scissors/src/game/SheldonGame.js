@@ -106,6 +106,52 @@ class SheldonGame extends React.Component {
     }
   };
 
+  handleClickLizard = () => {
+    initialScore.actionPlayer = "lizard";
+    const computerPlay = getRandomChoice();
+    initialScore.actionComputer1 = computerPlay;
+
+    if (initialScore.actionPlayer === computerPlay) {
+      initialScore.draws += 1;
+      initialScore.result = "Nobody. Try again";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    } else if (computerPlay === "rock") {
+      initialScore.losses += 1;
+      initialScore.result = "The computer. Unlucky ";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    } else {
+      initialScore.wins += 1;
+      initialScore.result = "It's YOU !!!!";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    }
+  };
+
+  handleClickSpock = () => {
+    initialScore.actionPlayer = "spock";
+    const computerPlay = getRandomChoice();
+    initialScore.actionComputer1 = computerPlay;
+
+    if (initialScore.actionPlayer === computerPlay) {
+      initialScore.draws += 1;
+      initialScore.result = "Nobody. Try again";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    } else if (computerPlay === "rock") {
+      initialScore.losses += 1;
+      initialScore.result = "The computer. Unlucky ";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    } else {
+      initialScore.wins += 1;
+      initialScore.result = "It's YOU !!!!";
+      this.setState({ initialScore });
+      console.log(initialScore);
+    }
+  };
+
   render() {
     return (
       <div className="App">

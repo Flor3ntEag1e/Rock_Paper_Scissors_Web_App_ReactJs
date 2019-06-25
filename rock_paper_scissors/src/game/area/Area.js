@@ -5,6 +5,8 @@ import "./Area.css";
 import rock from "./../../assets/rock.jpg";
 import paper from "./../../assets/paper.jpg";
 import scissors from "./../../assets/scissors.jpg";
+import lizard from "./../../assets/lizard.jpg";
+import spock from "./../../assets/spock.jpg";
 
 
 const Area = ({playerOne, computerOne}) => {
@@ -16,6 +18,10 @@ const Area = ({playerOne, computerOne}) => {
             return <img src={paper}/>
         } else if (playerOne === 'scissors') {
             return <img src={scissors}/>
+        }else if (computerOne === 'lizard') {
+            return <img src={lizard}/>
+        }else if (computerOne === 'spock') {
+            return <img src={spock}/>
         } else {
             return <p> ? </p>
         }
@@ -28,6 +34,10 @@ const Area = ({playerOne, computerOne}) => {
             return <img src={paper}/>
         } else if (computerOne === 'scissors') {
             return <img src={scissors}/>
+        }else if (computerOne === 'lizard') {
+            return <img src={lizard}/>
+        }else if (computerOne === 'spock') {
+            return <img src={spock}/>
         } else {
             return <p> ? </p>
         }
