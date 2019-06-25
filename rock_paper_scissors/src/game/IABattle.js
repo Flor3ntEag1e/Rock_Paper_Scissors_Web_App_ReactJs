@@ -39,6 +39,17 @@ class IABattle extends React.Component {
     initialScore.actionComputer2 = "";
   };
 
+  handleClickReset = () => {
+    initialScore.c1 = 0;
+    initialScore.c2 = 0;
+    initialScore.draws = 0;
+    initialScore.result = "";
+    initialScore.actionPlayer = "";
+    initialScore.actionComputer1 = "";
+    initialScore.actionComputer2 = "";
+    this.setState({ initialScore });
+  };
+
   handleClickRandom = () => {
     const computerOnePlay = getRandomChoice1();
     const computerTwoPlay = getRandomChoice2();

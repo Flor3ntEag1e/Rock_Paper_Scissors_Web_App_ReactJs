@@ -4,10 +4,11 @@ import './Modes.css'
 import IABattle from '../IABattle';
 import Game from '../Game'
 import SheldonGame from '../SheldonGame'
+import Rules from '../rules/Rules'
 
 
 
-const Modes = ({mode, iabattle, sheldongame}) => {
+const Modes = ({mode, iabattle, sheldongame, rules}) => {
     console.log({mode});
     //console.log({iabattle});
     
@@ -22,6 +23,12 @@ const Modes = ({mode, iabattle, sheldongame}) => {
         return (
             <div>
                 <SheldonGame />
+            </div>
+        );
+    } else if (mode === rules) {
+        return (
+            <div>
+                <Rules />
             </div>
         );
     } else {

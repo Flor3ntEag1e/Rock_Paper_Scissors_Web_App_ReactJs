@@ -7,7 +7,8 @@ import Modes from './game/modes/Modes'
 const initialGame = {
     typeGame: 0,
     typeIA: 1,
-    typeSheldon: 2
+    typeSheldon: 2,
+    rules: 3
 };
 
 
@@ -31,6 +32,12 @@ class App extends React.Component {
 		console.log(initialGame.typeGame)
     }
 
+    handleClickRules = () => {
+        initialGame.typeGame = 3
+		this.setState({initialGame})
+		console.log(initialGame.typeGame)
+    }
+
   render() {
 		return (
 			<div>
@@ -46,6 +53,9 @@ class App extends React.Component {
                     <li>
                         <button onClick={this.handleClickSheldonGame}>SheldonGame</button>
                     </li>
+                    <li>
+                        <button onClick={this.handleClickRules}>Rules</button>
+                    </li>
                 </ul>
             </div>
 			<div className='GamePlay'>
@@ -53,6 +63,7 @@ class App extends React.Component {
                 mode={initialGame.typeGame}
                 iabattle={initialGame.typeIA}
                 sheldongame={initialGame.typeSheldon}
+                rules={initialGame.rules}
                 />
 			</div>
 			</div>
