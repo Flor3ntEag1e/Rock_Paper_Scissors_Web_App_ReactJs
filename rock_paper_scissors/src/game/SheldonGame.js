@@ -3,7 +3,6 @@ import "./Game.css";
 
 //import component
 import TabScore from "./../components/TabScore";
-import Action from "./actions/Actions";
 import Area from "./area/Area";
 import Modes from './modes/Modes'
 
@@ -20,8 +19,7 @@ const initialScore = {
   losses: 0,
   result: "",
   actionPlayer: "",
-  actionComputer1: "",
-  actionComputer2: ""
+  actionComputer1: ""
 };
 
 export function getRandomChoice() {
@@ -48,17 +46,17 @@ class SheldonGame extends React.Component {
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
     console.log(computerPlay);
-    if (initialScore.actionPlayer === computerPlay) {
-      initialScore.draws += 1;
-      initialScore.result = "Nobody. Try again";
+    if (computerPlay === "scissors" || computerPlay === "lizard") {
+      initialScore.wins += 1;
+      initialScore.result = "Player, you win !!!";
       this.setState({ initialScore });
-    } else if (computerPlay === "paper") {
+    } else if (computerPlay === "paper" || computerPlay === "spock") {
       initialScore.losses += 1;
       initialScore.result = "The computer. Unlucky";
       this.setState({ initialScore });
     } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
+      initialScore.draws += 1;
+      initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
     }
   };
@@ -68,17 +66,17 @@ class SheldonGame extends React.Component {
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
     console.log(computerPlay);
-    if (initialScore.actionPlayer === computerPlay) {
-      initialScore.draws += 1;
-      initialScore.result = "Nobody. Try again";
+    if (computerPlay === "spock" || computerPlay === "rock") {
+      initialScore.wins += 1;
+      initialScore.result = "Player, you win !!!";
       this.setState({ initialScore });
-    } else if (computerPlay === "scissors") {
+    } else if (computerPlay === "scissors" || computerPlay === "spock") {
       initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
+      initialScore.result = "The computer. Unlucky";
       this.setState({ initialScore });
     } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
+      initialScore.draws += 1;
+      initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
     }
   };
@@ -87,22 +85,19 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "scissors";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-
-    if (initialScore.actionPlayer === computerPlay) {
+    console.log(computerPlay);
+    if (computerPlay === "paper" || computerPlay === "lizard") {
+      initialScore.wins += 1;
+      initialScore.result = "Player, you win !!!";
+      this.setState({ initialScore });
+    } else if (computerPlay === "rock" || computerPlay === "spock") {
+      initialScore.losses += 1;
+      initialScore.result = "The computer. Unlucky";
+      this.setState({ initialScore });
+    } else {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
-      console.log(initialScore);
-    } else if (computerPlay === "rock") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
-      this.setState({ initialScore });
-      console.log(initialScore);
-    } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-      console.log(initialScore);
     }
   };
 
@@ -110,22 +105,19 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "lizard";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-
-    if (initialScore.actionPlayer === computerPlay) {
+    console.log(initialScore.actionPlayer);
+    if (computerPlay === "spock" || computerPlay === "paper") {
+      initialScore.wins += 1;
+      initialScore.result = "Player, you win !!!";
+      this.setState({ initialScore });
+    } else if (computerPlay === "scissors" || computerPlay === "rock") {
+      initialScore.losses += 1;
+      initialScore.result = "The computer. Unlucky";
+      this.setState({ initialScore });
+    } else {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
-      console.log(initialScore);
-    } else if (computerPlay === "rock") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
-      this.setState({ initialScore });
-      console.log(initialScore);
-    } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-      console.log(initialScore);
     }
   };
 
@@ -133,22 +125,19 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "spock";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-
-    if (initialScore.actionPlayer === computerPlay) {
+    console.log(initialScore.actionPlayer);
+    if (computerPlay === "scissors" || computerPlay === "rock") {
+      initialScore.wins += 1;
+      initialScore.result = "Player, you win !!!";
+      this.setState({ initialScore });
+    } else if (computerPlay === "paper" || computerPlay === "lizard") {
+      initialScore.losses += 1;
+      initialScore.result = "The computer. Unlucky";
+      this.setState({ initialScore });
+    } else {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
-      console.log(initialScore);
-    } else if (computerPlay === "rock") {
-      initialScore.losses += 1;
-      initialScore.result = "The computer. Unlucky ";
-      this.setState({ initialScore });
-      console.log(initialScore);
-    } else {
-      initialScore.wins += 1;
-      initialScore.result = "It's YOU !!!!";
-      this.setState({ initialScore });
-      console.log(initialScore);
     }
   };
 
@@ -172,7 +161,7 @@ class SheldonGame extends React.Component {
         <div className="battlefield">
           <Area
             playerOne={initialScore.actionPlayer}
-            playerTwo={initialScore.actionComputer1}
+            computerOne={initialScore.actionComputer1}
           />
         </div>
 

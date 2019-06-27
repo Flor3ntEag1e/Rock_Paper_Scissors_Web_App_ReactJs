@@ -11,6 +11,11 @@ import spock from "./../../assets/spock.jpg";
 
 const Area = ({playerOne, computerOne}) => {
 
+    console.log({playerOne});
+    console.log({computerOne});
+    
+    
+
     const ImagesPlayerOne = () => {
         if(playerOne === 'rock') {
             return <img src={rock} />
@@ -18,9 +23,9 @@ const Area = ({playerOne, computerOne}) => {
             return <img src={paper}/>
         } else if (playerOne === 'scissors') {
             return <img src={scissors}/>
-        }else if (computerOne === 'lizard') {
+        }else if (playerOne === 'lizard') {
             return <img src={lizard}/>
-        }else if (computerOne === 'spock') {
+        }else if (playerOne === 'spock') {
             return <img src={spock}/>
         } else {
             return <p> ? </p>
@@ -53,7 +58,6 @@ const Area = ({playerOne, computerOne}) => {
         <ImagesPlayerOne />
       </div>
       <div className="playerTwo">
-      
       <ImagesComputerOne />
       </div>
     </div>
