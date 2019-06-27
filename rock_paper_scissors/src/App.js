@@ -17,25 +17,21 @@ class App extends React.Component {
     handleClickGame = () => {
         initialGame.typeGame = 0
         this.setState({initialGame})
-        console.log(initialGame.typeGame)
     }
 
     handleClickIABattle = () => {
         initialGame.typeGame = 1
 		this.setState({initialGame})
-		console.log(initialGame.typeGame)
     }
 
     handleClickSheldonGame = () => {
         initialGame.typeGame = 2
 		this.setState({initialGame})
-		console.log(initialGame.typeGame)
     }
 
     handleClickRules = () => {
         initialGame.typeGame = 3
 		this.setState({initialGame})
-		console.log(initialGame.typeGame)
     }
 
   render() {
@@ -61,6 +57,7 @@ class App extends React.Component {
 			<div className='GamePlay'>
 				<Modes
                 mode={initialGame.typeGame}
+                game={initialGame.typeGame}
                 iabattle={initialGame.typeIA}
                 sheldongame={initialGame.typeSheldon}
                 rules={initialGame.rules}

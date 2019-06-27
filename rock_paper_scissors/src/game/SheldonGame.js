@@ -45,7 +45,6 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "rock";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
     if (computerPlay === "scissors" || computerPlay === "lizard") {
       initialScore.wins += 1;
       initialScore.result = "Player, you win !!!";
@@ -65,7 +64,6 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "paper";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
     if (computerPlay === "spock" || computerPlay === "rock") {
       initialScore.wins += 1;
       initialScore.result = "Player, you win !!!";
@@ -85,7 +83,6 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "scissors";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
     if (computerPlay === "paper" || computerPlay === "lizard") {
       initialScore.wins += 1;
       initialScore.result = "Player, you win !!!";
@@ -105,7 +102,6 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "lizard";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(initialScore.actionPlayer);
     if (computerPlay === "spock" || computerPlay === "paper") {
       initialScore.wins += 1;
       initialScore.result = "Player, you win !!!";
@@ -125,7 +121,6 @@ class SheldonGame extends React.Component {
     initialScore.actionPlayer = "spock";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(initialScore.actionPlayer);
     if (computerPlay === "scissors" || computerPlay === "rock") {
       initialScore.wins += 1;
       initialScore.result = "Player, you win !!!";

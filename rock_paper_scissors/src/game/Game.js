@@ -3,7 +3,6 @@ import "./Game.css";
 
 //import component
 import TabScore from "./../components/TabScore";
-import Action from "./actions/Actions";
 import Area from "./area/Area";
 import Modes from './modes/Modes'
 
@@ -45,7 +44,6 @@ class Game extends React.Component {
     initialScore.actionPlayer = "rock";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
     if (initialScore.actionPlayer === computerPlay) {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
@@ -65,7 +63,6 @@ class Game extends React.Component {
     initialScore.actionPlayer = "paper";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-    console.log(computerPlay);
     if (initialScore.actionPlayer === computerPlay) {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
@@ -85,22 +82,18 @@ class Game extends React.Component {
     initialScore.actionPlayer = "scissors";
     const computerPlay = getRandomChoice();
     initialScore.actionComputer1 = computerPlay;
-
     if (initialScore.actionPlayer === computerPlay) {
       initialScore.draws += 1;
       initialScore.result = "Nobody. Try again";
       this.setState({ initialScore });
-      console.log(initialScore);
     } else if (computerPlay === "rock") {
       initialScore.losses += 1;
       initialScore.result = "The computer. Unlucky ";
       this.setState({ initialScore });
-      console.log(initialScore);
     } else {
       initialScore.wins += 1;
       initialScore.result = "It's YOU !!!!";
       this.setState({ initialScore });
-      console.log(initialScore);
     }
   };
 

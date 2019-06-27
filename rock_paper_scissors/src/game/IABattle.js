@@ -55,8 +55,6 @@ class IABattle extends React.Component {
     const computerTwoPlay = getRandomChoice2();
     initialScore.actionComputer1 = computerOnePlay;
     initialScore.actionComputer2 = computerTwoPlay;
-    console.log(computerOnePlay);
-    console.log(computerTwoPlay);
     if (computerOnePlay === "paper" && computerTwoPlay === "rock" ||
     computerOnePlay === "scissors" && computerTwoPlay === "paper" ||
     computerOnePlay === "rock" && computerTwoPlay === "scissors") {

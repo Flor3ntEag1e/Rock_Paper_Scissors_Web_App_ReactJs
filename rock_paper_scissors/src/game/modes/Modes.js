@@ -8,11 +8,10 @@ import Rules from '../rules/Rules'
 
 
 
-const Modes = ({mode, iabattle, sheldongame, rules}) => {
-    console.log({mode});
-    //console.log({iabattle});
-    
+const Modes = ({mode, game, iabattle, sheldongame, rules}) => {
 
+    console.log({mode});
+    
     if (mode === iabattle) {
         return (
             <div>
@@ -29,6 +28,12 @@ const Modes = ({mode, iabattle, sheldongame, rules}) => {
         return (
             <div>
                 <Rules />
+            </div>
+        );
+    }else if (mode === game) {
+        return (
+            <div>
+                <Game />
             </div>
         );
     } else {

@@ -11,11 +11,6 @@ import spock from "./../../assets/spock.jpg";
 
 const Area = ({playerOne, computerOne}) => {
 
-    console.log({playerOne});
-    console.log({computerOne});
-    
-    
-
     const ImagesPlayerOne = () => {
         if(playerOne === 'rock') {
             return <img src={rock} />
