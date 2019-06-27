@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Game';
+import Game from './Game';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Game />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('Game', () => {
+
+    it('renders without crashing', () => {
+      const div = document.createElement('div');
+      ReactDOM.render(<Game />, div);
+      ReactDOM.unmountComponentAtNode(div);
+    });
+  
+  })
