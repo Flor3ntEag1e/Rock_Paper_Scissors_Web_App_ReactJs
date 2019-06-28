@@ -139,7 +139,7 @@ class SheldonGame extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Rock Paper Scissors <br /> Lizard Spock</h1>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
 
         <div className="score">
           <TabScore
@@ -160,7 +160,6 @@ class SheldonGame extends React.Component {
           />
         </div>
 
-        <br />
         <h3>Choose your action</h3>
         <img src={rock} onClick={this.handleClickRock} />
         <img src={paper} onClick={this.handleClickPaper} />

@@ -121,7 +121,6 @@ class Game extends React.Component {
           />
         </div>
 
-        <br />
         <h3>Choose your action</h3>
         <img src={rock} onClick={this.handleClickRock} />
         <img src={paper} onClick={this.handleClickPaper} />
