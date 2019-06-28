@@ -7,7 +7,7 @@ Cette application React propose 3 modes de jeu :
 + Le "Pierre Feuille Ciseaux" entre 2 ordinateurs
 + Le jeu inventé par Sheldon dans la série "The big bang theory"  et qui se nomme le "Pierre Feuille Ciseaux Lézard Spock" 
 
-Vous pouvez également consulter les règles du jeu traditionnel et du jeu revisité grâce au boutton "Rules".
+Vous pouvez également consulter les règles du jeu traditionnel et du jeu revisité grâce au bouton "Rules".
 
 
 L'application est hébergée sur Netfily qui est un service d'hébergement et de cloud computing.
